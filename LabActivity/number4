@@ -1,1 +1,39 @@
+import java.io.*; 
 
+  
+
+ public class number4 { 
+
+   public static void main(String[] args) throws IOException { 
+
+     
+
+     BufferedReader reader = new BufferedReader(new FileReader("dummy.txt")); 
+
+  
+
+     String line; 
+
+     int WordCount = 0; 
+
+      
+
+     while ((line = reader.readLine()) != null){ 
+
+       String[] words = line.split("\\s+"); 
+
+       WordCount += words.length; 
+
+     } 
+
+  
+
+     reader.close(); 
+
+     System.out.println("Number of words: "+ WordCount); 
+
+      
+
+   } 
+
+ }
