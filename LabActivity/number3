@@ -1,49 +1,26 @@
+// 3. Write a Java program that will count all the vowels (small or big) in the first 5 lines of dummy.txt. 
 import java.io.*; 
 
-  
-
  public class number3 { 
-
    public static void main(String[] args) throws IOException { 
-
-     
 
      BufferedReader reader = new BufferedReader(new FileReader("dummy.txt")); 
 
-      
-
      int vowelCount = 0; 
 
-  
-
      for (int i = 0; i < 5; i++) { 
-
        String line = reader.readLine(); 
-
-  
-
+       
        for (char c : line.toCharArray()) { 
-
-         
-
          if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') { 
-
            vowelCount++; 
-
+           
          } 
-
        } 
-
      } 
 
-      
-
      reader.close(); 
-
      System.out.println("Vowel count: " + vowelCount); 
 
-      
-
    } 
-
  }
