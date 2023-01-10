@@ -1,4 +1,5 @@
 // 3. Write a Java program that will count all the vowels (small or big) in the first 5 lines of dummy.txt. 
+
 import java.io.*; 
 
  public class number3 { 
