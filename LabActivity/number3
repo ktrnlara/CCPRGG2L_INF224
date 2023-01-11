@@ -5,7 +5,7 @@ import java.io.*;
  public class number3 { 
    public static void main(String[] args) throws IOException { 
 
-     BufferedReader reader = new BufferedReader(new FileReader("dummy.txt")); 
+     BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\PC1\\Documents\\dummy.txt")); 
 
      int vowelCount = 0; 
 
@@ -21,7 +21,7 @@ import java.io.*;
      } 
 
      reader.close(); 
-     System.out.println("Vowel count: " + vowelCount); 
+     System.out.println("Vowel Count: " + vowelCount); 
 
    } 
  }
