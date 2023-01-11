@@ -3,34 +3,34 @@
 import java.io.*; 
 
  public class number2 { 
-     public static void main(String[] args) throws IOException { 
+    public static void main(String[] args) throws IOException { 
 
-         BufferedReader reader = null; 
-         try { 
+        BufferedReader reader = null; 
+        try { 
 
-             reader = new BufferedReader(new FileReader("C:\\Users\\PC1\\Documents\\dummy.txt")); 
+            reader = new BufferedReader(new FileReader("C:\\Users\\PC1\\Documents\\dummy.txt")); 
              
-             for (int i = 0; i < 5; i++) { 
+            for (int i = 0; i < 5; i++) { 
 
-                 String line = reader.readLine(); 
-                 System.out.println(line); 
-             } 
+                String line = reader.readLine(); 
+                System.out.println(line); 
+            } 
 
-         } catch (IOException e) { 
-            
-             System.out.println("Error reading file: " + e.getMessage()); 
+        } catch (IOException e) { 
 
-         } finally { 
-             try { 
+            System.out.println("Error reading file: " + e.getMessage()); 
+
+        } finally { 
+            try { 
              
-                 if (reader != null) { 
-                     reader.close(); 
-                 } 
+                if (reader != null) { 
+                    reader.close(); 
+                } 
 
-             } catch (IOException e) { 
-                 System.out.println("Error closing file: " + e.getMessage()); 
+            } catch (IOException e) { 
+                System.out.println("Error closing file: " + e.getMessage()); 
 
-             } 
-         } 
-     } 
- }
+            } 
+        } 
+    } 
+}
