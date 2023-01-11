@@ -8,7 +8,8 @@ import java.io.*;
          BufferedReader reader = null; 
          try { 
 
-             reader = new BufferedReader(new FileReader("dummy.txt")); 
+             reader = new BufferedReader(new FileReader("C:\\Users\\PC1\\Documents\\dummy.txt")); 
+             
              for (int i = 0; i < 5; i++) { 
 
                  String line = reader.readLine(); 
@@ -16,6 +17,7 @@ import java.io.*;
              } 
 
          } catch (IOException e) { 
+            
              System.out.println("Error reading file: " + e.getMessage()); 
 
          } finally { 
