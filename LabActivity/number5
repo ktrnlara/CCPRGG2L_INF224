@@ -1,55 +1,51 @@
- // 5. Write a Java program that reads a text file (dummy.txt) and creates a new file with the same contents but with all the words in reverse order. 
+ // 5. Write a Java program that reads a text file (dummy.txt) and 
+ // creates a new file with the same contents but with all the words in reverse order. 
  // The program should prompt the user for the input and output file names. Hint: Use an array
- 
- import java.io.File; 
- import java.io.FileNotFoundException; 
- import java.io.FileWriter; 
- import java.io.IOException; 
- import java.util.Scanner; 
 
- public class number5 { 
-     public static void main(String[] args) { 
+import java.io.*;
+import java.util.*;
 
-         Scanner sc = new Scanner(System.in); 
-         System.out.print("Input file name (INPUT): "); 
-         String inputFileName = sc.nextLine(); 
+public class number5 {
+    public static void main(String[] args) throws IOException {
 
-         File inputFile = new File(inputFileName); 
+    Scanner scan = new Scanner(System.in);
 
-         try { 
+    System.out.print("INPUT FILE NAME: ");
+    String inputfileName = scan.nextLine();
 
-             Scanner reader = new Scanner(inputFile).useDelimiter("\r\n"); 
-             System.out.print("Input file name (OUTPUT): "); 
-             String outputFileName = sc.nextLine(); 
+    System.out.print("OUTPUT FILE NAME: ");
+    String outputfileName = scan.nextLine();
+    scan.close();
 
-             try { 
-                 FileWriter fw = new FileWriter(String.format("C:\\Users\\admin\\Documents", outputFileName)); 
-                 while (reader.hasNext()){ 
-                     String[] words = reader.next().split("\s"); 
-                     for(String word : words){ 
-                         char[] letters = word.toCharArray(); 
-                         for(int i = letters.length - 1; i >= 0; i--){ 
-                             fw.write(letters[i]); 
-                         } 
+    File inputFile = new File(inputfileName);
+    Scanner scan2 = new Scanner(inputFile);
+    List<String> lines = new ArrayList<>();
 
-                         fw.write(" "); 
-                     } 
+    while (scan2.hasNextLine()) {
+        lines.add(scan2.nextLine());
 
-                     if(reader.hasNext()) 
-                         fw.write("\n"); 
-                 } 
-  
-                 fw.close(); 
-             }catch (IOException e){ 
-                 e.printStackTrace(); 
+    }
 
-             } 
+    scan2.close();
 
-             reader.close(); 
-         }catch (FileNotFoundException e){ 
-             e.printStackTrace(); 
+    Collections.reverse(lines);
 
-         } 
-         sc.close(); 
-     } 
- }
+    FileWriter outputFile = new FileWriter(outputfileName);
+    PrintWriter output = new PrintWriter(outputFile);
+
+    for (String line : lines) {
+        String[] words = line.split("\\s+");
+        
+        for (int i = words.length - 1; i >= 0; i--) {
+        output.print(words[i] + " ");
+
+      }
+
+        output.println();
+
+    }
+
+    output.close();
+
+  }
+}
