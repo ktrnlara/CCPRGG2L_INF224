@@ -8,7 +8,7 @@ import java.io.*;
 
    public static void main(String[] args) throws IOException { 
 
-     BufferedReader reader = new BufferedReader(new FileReader("data.txt")); 
+     BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\PC1\\Documents\\data.txt")); 
 
      int result = 0; 
      
