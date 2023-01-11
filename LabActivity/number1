@@ -29,6 +29,5 @@ public class number1 {
     writer.write(String.valueOf(result));
     writer.close();
     
-    
   }
 }
