@@ -4,8 +4,14 @@ import java.io.*; //import library for input and output streams e.g. BufferedRea
 public class regExActivity {
     public static void main(String[] args) throws IOException{
         username();
+        System.out.println(" ");
+
         email();
+        System.out.println(" ");
+
         findPanda();
+        System.out.println(" ");
+
     }
     
     public static void username()throws IOException, FileNotFoundException{
@@ -19,7 +25,7 @@ public class regExActivity {
 
         File file = new File("C:\\Users\\PC1\\Documents\\username.txt");
         BufferedReader br = new BufferedReader (new FileReader(file));
-        String pattern = " ^[a-z0-9_-]{8,24}$ "; //insert regex here 
+        String pattern = "^[a-z0-9_-]{8,25}$"; //insert regex here
         String text;
         
         while((text = br.readLine()) != null){
@@ -31,6 +37,7 @@ public class regExActivity {
                 System.out.println("Not valid.");
             }
         } 
+        br.close();
     } 
     
     public static void email()throws IOException, FileNotFoundException{
@@ -48,7 +55,7 @@ public class regExActivity {
 
         File file = new File("C:\\Users\\PC1\\Documents\\email.txt");
         BufferedReader br = new BufferedReader (new FileReader(file));
-        String pattern = "^[\\w\\d_-]{7,}@[\\w\\d_-]+\\.[\\w\\d_-]{2,}$"; //insert regex here
+        String pattern = "(^[\\w-_]{7,})@([\\w-_]+)\\.([\\w-_]{2,})$"; //insert regex here
         String text;
         
         while((text = br.readLine()) != null){
@@ -59,7 +66,8 @@ public class regExActivity {
             else{
                 System.out.println("Invalid.");
             }
-        } 
+        }
+        br.close();
     }
     
     public static void findPanda()throws IOException, FileNotFoundException{
@@ -68,7 +76,6 @@ public class regExActivity {
         File file = new File("C:\\Users\\PC1\\Documents\\panda.txt");
         BufferedReader br = new BufferedReader (new FileReader(file));
         String pattern = ".*panda.*"; //insert regex here 
-
         String text;
         
         while((text = br.readLine()) != null){
@@ -80,7 +87,7 @@ public class regExActivity {
                 System.out.println("panda not found.");
             }
         } 
+        br.close();
     }
-    
 }
 
