@@ -1,14 +1,14 @@
 class Movies {
-  
-    String title = " 20th Century Girl";
-    String genre = "Melodrama"; 
-    String filmRating = "PG-13";
-    String language = "Korean ";
-    int year = 2022;
-    String country = "South Korea";
-    String director = "Bang Woo - Ri";
-    String subtitle = "English";
-    String ost = "Beginning";
+
+    String title;
+    String genre; 
+    String filmRating;
+    String language;
+    int year;
+    String country;
+    String director;
+    String subtitle;
+    String ost;
   
   public Movies(String title, String genre, String filmRating, 
   String language, int year,String country, String director, 
